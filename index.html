@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curso intensivo para crear negocios digitales con IA del 1 al 7 de julio de 2025">
+  <title>Curso Intensivo: Negocio Digital Inteligente</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0C1B33;
+      --secondary: #1E3A8A;
+      --accent: #F4C95D;
+      --light: #FFFFFF;
+      --dark: #0A1429;
+      --success: #4CAF50;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--primary);
+      color: var(--light);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* Header con efecto parallax */
+    .hero {
+      background: linear-gradient(rgba(12, 27, 51, 0.8), rgba(12, 27, 51, 0.8)), 
+                  url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3') no-repeat center center/cover;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+      animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    h1 {
+      font-size: 3.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      animation: slideDown 1s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin-bottom: 2rem;
+      animation: slideUp 1s ease-out;
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Tarjetas de características */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+      background-color: var(--dark);
+    }
+    
+    .feature-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 2rem;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(244, 201, 93, 0.2);
+    }
+    
+    .feature-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    /* Sección principal */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .section h2 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 4px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+    
+    /* Timeline del curso */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background-color: var(--accent);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+    
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+    
+    .timeline-content {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      position: relative;
+      backdrop-filter: blur(5px);
+    }
+    
+    .timeline-content::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      top: 20px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::after {
+      right: -30px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::after {
+      left: -30px;
+    }
+    
+    /* Botones */
+    .button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--dark);
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(244, 201, 93, 0.4);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(244, 201, 93, 0.6);
+    }
+    
+    .button:active {
+      transform: translateY(1px);
+    }
+    
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.5s;
+    }
+    
+    .button:hover::before {
+      left: 100%;
+    }
+    
+    /* Formulario moderno */
+    .form-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 3rem;
+      max-width: 600px;
+      margin: 0 auto;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(244, 201, 93, 0.3);
+    }
+    
+    /* Testimonios */
+    .testimonials {
+      background: var(--dark);
+      padding: 4rem 2rem;
+    }
+    
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .testimonial {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(244, 201, 93, 0.1);
+      font-family: serif;
+      line-height: 1;
+    }
+    
+    .testimonial-content {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    
+    .testimonial-author img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 1rem;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(to right, var(--dark), var(--primary));
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-links a {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      color: var(--accent);
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .copyright {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      .timeline::before {
+        left: 31px;
+      }
+      
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+      
+      .timeline-content::after {
+        left: 15px;
+      }
+      
+      .timeline-item:nth-child(odd) .timeline-content::after,
+      .timeline-item:nth-child(even) .timeline-content::after {
+        left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Negocio Digital Inteligente</h1>
+  <p>Del 1 al 7 de julio de 2025 · Curso intensivo 100% online</p>
+  <a href="#inscripcion" class="button">
+    <i class="fas fa-rocket" style="margin-right: 10px;"></i> Inscribirme ahora - $45.000 CLP
+  </a>
+  <div style="margin-top: 2rem;">
+    <i class="fas fa-chevron-down" style="font-size: 2rem; color: var(--accent); animation: bounce 2s infinite;"></i>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+  <div class="feature-card">
+    <i class="fas fa-bolt"></i>
+    <h3>Aprendizaje Rápido</h3>
+    <p>Domina las herramientas esenciales para tu negocio digital en solo 7 días con nuestro método intensivo.</p>
+  </div>
+  
+  <div class="feature-card">
+    <i class="fas fa-robot"></i>
+    <h3>Potenciado por IA</h3>
+    <p>Utiliza las últimas herramientas de inteligencia artificial para automatizar y escalar tu negocio.</p>
+  </div>
+  
+  <div class="feature-card">
+    <i class="fas fa-hands-helping"></i>
+    <h3>Soporte Personalizado</h3>
+    <p>Acceso directo a mentores y sesiones 1:1 para resolver tus dudas específicas.</p>
+  </div>
+</section>
+
+<!-- Main Content Section -->
+<section class="section">
+  <h2>🚀 Transforma tu idea en un negocio digital real</h2>
+  <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+    Aprende en solo <strong>una semana</strong> a crear tu identidad digital, sitio web, base de datos, tienda online y app móvil con herramientas basadas en <span style="color: var(--accent); font-weight: 600;">Inteligencia Artificial (ChatGPT)</span>.
+  </p>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
+    <div style="flex: 1; min-width: 300px;">
+      <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Para quién es este curso</h3>
+      <ul style="list-style-type: none;">
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Emprendedores que quieren lanzar su idea al mundo digital
+        </li>
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> PYMES que necesitan modernizar su presencia online
+        </li>
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Profesionales que quieren monetizar sus habilidades
+        </li>
+      </ul>
+    </div>
+    
+    <div style="flex: 1; min-width: 300px;">
+      <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Qué lograrás</h3>
+      <ul style="list-style-type: none;">
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Sitio web profesional sin saber programar
+        </li>
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Sistemas automatizados con IA para ahorrar tiempo
+        </li>
+        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Estrategias para atraer clientes desde el primer día
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="#inscripcion" class="button">
+      <i class="fas fa-ticket-alt" style="margin-right: 10px;"></i> Reservar mi cupo ahora
+    </a>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="section" style="background-color: var(--dark);">
+  <h2>🗓️ Programa del Curso</h2>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 1: Fundamentos</h3>
+        <p>Identidad digital y marca personal. Configuración de herramientas esenciales.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 2: Sitio Web</h3>
+        <p>Creación de tu sitio web profesional con plantillas IA y sin código.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 3: Automatización</h3>
+        <p>Sistemas automatizados con ChatGPT para atención al cliente y ventas.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 4: Tienda Online</h3>
+        <p>Configuración de e-commerce y pasarelas de pago.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 5: Marketing</h3>
+        <p>Estrategias digitales para atraer clientes con bajo presupuesto.</p>
+      </div>
+    </div>
+    
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3 style="color: var(--accent);">Día 6-7: Proyecto Final</h3>
+        <p>Sesiones prácticas personalizadas y lanzamiento de tu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <h2 style="text-align: center; color: var(--accent); font-size: 2.5rem; margin-bottom: 3rem;">Lo que dicen nuestros estudiantes</h2>
+  
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      <div class="testimonial-content">
+        <p>Este curso cambió completamente mi perspectiva sobre los negocios digitales. En una semana tenía mi tienda online funcionando y haciendo ventas.</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana López">
+          <div>
+            <h4 style="color: var(--accent);">Ana López</h4>
+            <p>Dueña de Boutique Online</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonial">
+      <div class="testimonial-content">
+        <p>Las herramientas de IA que enseñan son un game changer. Automatizé el 80% de mi trabajo y ahora puedo enfocarme en crecer mi negocio.</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Mendez">
+          <div>
+            <h4 style="color: var(--accent);">Carlos Mendez</h4>
+            <p>Consultor Financiero</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testimonial">
+      <div class="testimonial-content">
+        <p>El soporte personalizado hizo toda la diferencia. Pude resolver todas mis dudas específicas y adaptar las soluciones a mi industria.</p>
+        <div class="testimonial-author">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="María Fernández">
+          <div>
+            <h4 style="color: var(--accent);">María Fernández</h4>
+            <p>Coach de Vida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="section" style="text-align: center;">
+  <h2>💳 Inversión</h2>
+  
+  <div style="background: rgba(244, 201, 93, 0.1); border-radius: 15px; padding: 2rem; display: inline-block; margin: 2rem 0; border: 2px solid var(--accent);">
+    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">$45.000 CLP</h3>
+    <p style="font-size: 1.2rem;">Pago único · Acceso inmediato</p>
+  </div>
+  
+  <div style="max-width: 600px; margin: 0 auto 2rem;">
+    <ul style="list-style-type: none; text-align: left;">
+      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
+        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
+        <strong>7 días</strong> de entrenamiento intensivo con expertos
+      </li>
+      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
+        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
+        <strong>Plantillas premium</strong> generadas con IA
+      </li>
+      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
+        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
+        <strong>Soporte 1:1</strong> durante y después del curso
+      </li>
+      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
+        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
+        <strong>Certificado</strong> de finalización
+      </li>
+      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
+        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
+        <strong>Acceso</strong> a comunidad exclusiva
+      </li>
+    </ul>
+  </div>
+  
+  <a href="#inscripcion" class="button" style="background-color: var(--success); box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);">
+    <i class="fas fa-lock" style="margin-right: 10px;"></i> Garantía de satisfacción
+  </a>
+  
+  <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">
+    7 días de garantía - Si no estás satisfecho, te devolvemos tu dinero
+  </p>
+</section>
+
+<!-- Form Section -->
+<section id="inscripcion" class="section" style="background-color: var(--dark);">
+  <h2 style="text-align: center;">📋 Últimos Cupos Disponibles</h2>
+  <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem;">
+    Completa tus datos y te enviaremos toda la información para unirte al curso
+  </p>
+  
+  <div class="form-container">
+    <form action="https://tu-formulario-o-landing.com" method="POST">
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+      </div>
+      
+      <div class="form-group">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required placeholder="tucorreo@ejemplo.com">
+      </div>
+      
+      <div class="form-group">
+        <label for="telefono">WhatsApp (opcional)</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
+      </div>
+      
+      <div style="text-align: center; margin-top: 2rem;">
+        <button type="submit" class="button">
+          <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Reservar mi cupo ahora
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="social-links">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+  </div>
+  
+  <div class="footer-links">
+    <a href="#">Términos y condiciones</a>
+    <a href="#">Política de privacidad</a>
+    <a href="#">Preguntas frecuentes</a>
+    <a href="#">Contáctanos</a>
+  </div>
+  
+  <p class="copyright">© 2025 Negocio Digital Inteligente. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+  // Animación para el scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+  
+  // Efecto de aparición al hacer scroll
+  const fadeElements = document.querySelectorAll('.feature-card, .timeline-item, .testimonial');
+  
+  const fadeInOnScroll = () => {
+    fadeElements.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (elementTop < windowHeight - 100) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+      }
+    });
+  };
+  
+  // Configura inicialmente los elementos como invisibles
+  fadeElements.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+  
+  window.addEventListener('scroll', fadeInOnScroll);
+  window.addEventListener('load', fadeInOnScroll);
+</script>
+
+</body>
+</html>
