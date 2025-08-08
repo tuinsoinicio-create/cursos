@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Curso intensivo para crear negocios digitales con IA del 1 al 7 de julio de 2025">
-  <title>Curso Intensivo: Negocio Digital Inteligente</title>
+  <meta name="description" content="Curso para emprendedores: crea tu propia aplicación web profesional con IA (ChatGPT y DeepSeek)">
+  <title>Curso: Crea tu Web App para tu Negocio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -32,7 +32,6 @@
       overflow-x: hidden;
     }
     
-    /* Header con efecto parallax */
     .hero {
       background: linear-gradient(rgba(12, 27, 51, 0.8), rgba(12, 27, 51, 0.8)), 
                   url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3') no-repeat center center/cover;
@@ -77,7 +76,6 @@
       to { transform: translateY(0); opacity: 1; }
     }
     
-    /* Tarjetas de características */
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -114,7 +112,6 @@
       font-size: 1.5rem;
     }
     
-    /* Sección principal */
     .section {
       padding: 5rem 2rem;
       max-width: 1200px;
@@ -140,7 +137,6 @@
       border-radius: 2px;
     }
     
-    /* Timeline del curso */
     .timeline {
       position: relative;
       max-width: 800px;
@@ -199,7 +195,6 @@
       left: -30px;
     }
     
-    /* Botones */
     .button {
       display: inline-block;
       background-color: var(--accent);
@@ -241,7 +236,6 @@
       left: 100%;
     }
     
-    /* Formulario moderno */
     .form-container {
       background: rgba(255, 255, 255, 0.05);
       border-radius: 20px;
@@ -266,7 +260,8 @@
     
     input[type="text"],
     input[type="email"],
-    input[type="tel"] {
+    input[type="tel"],
+    textarea {
       width: 100%;
       padding: 15px;
       border-radius: 10px;
@@ -277,13 +272,12 @@
       transition: all 0.3s ease;
     }
     
-    input:focus {
+    input:focus, textarea:focus {
       outline: none;
       border-color: var(--accent);
       box-shadow: 0 0 10px rgba(244, 201, 93, 0.3);
     }
     
-    /* Testimonios */
     .testimonials {
       background: var(--dark);
       padding: 4rem 2rem;
@@ -335,7 +329,6 @@
       border: 2px solid var(--accent);
     }
     
-    /* Footer */
     footer {
       background: linear-gradient(to right, var(--dark), var(--primary));
       padding: 3rem 2rem;
@@ -382,7 +375,107 @@
       font-size: 0.9rem;
     }
     
-    /* Responsive */
+    .module-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .module-table th {
+      background-color: rgba(244, 201, 93, 0.2);
+      color: var(--accent);
+      padding: 1rem;
+      text-align: left;
+    }
+    
+    .module-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .module-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .module-table tr:hover {
+      background-color: rgba(244, 201, 93, 0.05);
+    }
+    
+    .module-title {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Estilos para páginas legales */
+    .legal-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+    }
+    
+    .legal-container h1 {
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    
+    .legal-container h2 {
+      color: var(--accent);
+      margin: 2rem 0 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .legal-container p, .legal-container ul {
+      margin-bottom: 1rem;
+    }
+    
+    .legal-container ul {
+      padding-left: 2rem;
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .back-button:hover {
+      text-decoration: underline;
+    }
+    
+    /* FAQ styles */
+    .faq-item {
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
+    
+    .faq-question {
+      color: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .faq-answer {
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    .faq-answer.show {
+      display: block;
+    }
+    
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5rem;
@@ -414,6 +507,15 @@
       .timeline-item:nth-child(even) .timeline-content::after {
         left: 15px;
       }
+      
+      .module-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .legal-container {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -421,10 +523,10 @@
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Negocio Digital Inteligente</h1>
-  <p>Del 1 al 7 de julio de 2025 · Curso intensivo 100% online</p>
+  <h1>Crea tu Web App para tu Negocio</h1>
+  <p>Guía completa para emprendedores que desean desarrollar su propia aplicación web profesional</p>
   <a href="#inscripcion" class="button">
-    <i class="fas fa-rocket" style="margin-right: 10px;"></i> Inscribirme ahora - $45.000 CLP
+    <i class="fas fa-rocket" style="margin-right: 10px;"></i> Inscribirme ahora
   </a>
   <div style="margin-top: 2rem;">
     <i class="fas fa-chevron-down" style="font-size: 2rem; color: var(--accent); animation: bounce 2s infinite;"></i>
@@ -434,29 +536,29 @@
 <!-- Features Section -->
 <section class="features">
   <div class="feature-card">
-    <i class="fas fa-bolt"></i>
-    <h3>Aprendizaje Rápido</h3>
-    <p>Domina las herramientas esenciales para tu negocio digital en solo 7 días con nuestro método intensivo.</p>
+    <i class="fas fa-bullseye"></i>
+    <h3>Objetivo del Curso</h3>
+    <p>Crear una aplicación web funcional y profesional para tu negocio, sin necesidad de conocimientos previos de programación.</p>
   </div>
   
   <div class="feature-card">
-    <i class="fas fa-robot"></i>
-    <h3>Potenciado por IA</h3>
-    <p>Utiliza las últimas herramientas de inteligencia artificial para automatizar y escalar tu negocio.</p>
+    <i class="fas fa-tools"></i>
+    <h3>Herramientas</h3>
+    <p>Utilizaremos ChatGPT, DeepSeek y Sublime Text para desarrollar tu aplicación web de manera eficiente.</p>
   </div>
   
   <div class="feature-card">
-    <i class="fas fa-hands-helping"></i>
-    <h3>Soporte Personalizado</h3>
-    <p>Acceso directo a mentores y sesiones 1:1 para resolver tus dudas específicas.</p>
+    <i class="fas fa-graduation-cap"></i>
+    <h3>Resultados</h3>
+    <p>Al finalizar tendrás tu web app publicada y lista para recibir clientes, con todas las funcionalidades necesarias.</p>
   </div>
 </section>
 
 <!-- Main Content Section -->
 <section class="section">
-  <h2>🚀 Transforma tu idea en un negocio digital real</h2>
+  <h2>🚀 Transforma tu negocio con tu propia Web App</h2>
   <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-    Aprende en solo <strong>una semana</strong> a crear tu identidad digital, sitio web, base de datos, tienda online y app móvil con herramientas basadas en <span style="color: var(--accent); font-weight: 600;">Inteligencia Artificial (ChatGPT)</span>.
+    Aprende a crear tu aplicación web profesional utilizando <span style="color: var(--accent); font-weight: 600;">inteligencia artificial (ChatGPT y DeepSeek)</span> y Sublime Text para edición de código.
   </p>
   
   <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 3rem;">
@@ -464,13 +566,13 @@
       <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Para quién es este curso</h3>
       <ul style="list-style-type: none;">
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Emprendedores que quieren lanzar su idea al mundo digital
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Emprendedores sin conocimientos técnicos
         </li>
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> PYMES que necesitan modernizar su presencia online
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Dueños de negocios que quieren digitalizarse
         </li>
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Profesionales que quieren monetizar sus habilidades
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Profesionales que buscan crear su propia herramienta
         </li>
       </ul>
     </div>
@@ -479,70 +581,105 @@
       <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Qué lograrás</h3>
       <ul style="list-style-type: none;">
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Sitio web profesional sin saber programar
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Web App funcional para tu negocio
         </li>
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Sistemas automatizados con IA para ahorrar tiempo
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Dominio de herramientas con IA
         </li>
         <li style="margin-bottom: 0.8rem; position: relative; padding-left: 30px;">
-          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Estrategias para atraer clientes desde el primer día
+          <i class="fas fa-check-circle" style="color: var(--accent); position: absolute; left: 0;"></i> Aplicación web publicada y operativa
         </li>
       </ul>
     </div>
   </div>
   
   <div style="text-align: center; margin-top: 3rem;">
-    <a href="#inscripcion" class="button">
-      <i class="fas fa-ticket-alt" style="margin-right: 10px;"></i> Reservar mi cupo ahora
+    <a href="#estructura" class="button">
+      <i class="fas fa-list-alt" style="margin-right: 10px;"></i> Ver programa completo
     </a>
   </div>
 </section>
 
-<!-- Timeline Section -->
-<section class="section" style="background-color: var(--dark);">
-  <h2>🗓️ Programa del Curso</h2>
+<!-- Estructura del Curso -->
+<section id="estructura" class="section" style="background-color: var(--dark);">
+  <h2>📚 Estructura del Curso</h2>
   
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 1: Fundamentos</h3>
-        <p>Identidad digital y marca personal. Configuración de herramientas esenciales.</p>
-      </div>
+  <table class="module-table">
+    <thead>
+      <tr>
+        <th>Módulo</th>
+        <th>Clase</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="module-title">MÓDULO 1: Introducción</td>
+        <td>Clase 1</td>
+        <td>Qué es una Web App y cómo puede potenciar tu negocio</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Clase 2</td>
+        <td>Instalación y configuración del entorno de trabajo</td>
+      </tr>
+      <tr>
+        <td class="module-title">MÓDULO 2: Diseño y Maquetación</td>
+        <td>Clase 3</td>
+        <td>Creación del diseño estructural (HTML + CSS básico)</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Clase 4</td>
+        <td>Prototipado visual con DeepSeek y prompts avanzados</td>
+      </tr>
+      <tr>
+        <td class="module-title">MÓDULO 3: Funcionalidades</td>
+        <td>Clase 5</td>
+        <td>Agregando interactividad con JavaScript</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Clase 6</td>
+        <td>Lógica de negocio y componentes dinámicos</td>
+      </tr>
+      <tr>
+        <td class="module-title">MÓDULO 4: Optimización y Publicación</td>
+        <td>Clase 7</td>
+        <td>Optimización, estilo profesional y responsive design</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Clase 8</td>
+        <td>Publicación de la aplicación web y próximos pasos</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Extras Section -->
+<section class="section">
+  <h2>🎁 Extras del Curso</h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem;">
+    <div style="background: rgba(244, 201, 93, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+      <h3 style="color: var(--accent); margin-bottom: 1rem;">Plantillas de prompts</h3>
+      <p>Acceso a plantillas optimizadas para ChatGPT y DeepSeek que acelerarán tu desarrollo.</p>
     </div>
     
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 2: Sitio Web</h3>
-        <p>Creación de tu sitio web profesional con plantillas IA y sin código.</p>
-      </div>
+    <div style="background: rgba(244, 201, 93, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+      <h3 style="color: var(--accent); margin-bottom: 1rem;">Repositorio GitHub</h3>
+      <p>Código base y ejemplos para comenzar tu proyecto inmediatamente.</p>
     </div>
     
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 3: Automatización</h3>
-        <p>Sistemas automatizados con ChatGPT para atención al cliente y ventas.</p>
-      </div>
+    <div style="background: rgba(244, 201, 93, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+      <h3 style="color: var(--accent); margin-bottom: 1rem;">Checklist de publicación</h3>
+      <p>Guía paso a paso para publicar tu app con consideraciones de SEO, dominio y más.</p>
     </div>
     
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 4: Tienda Online</h3>
-        <p>Configuración de e-commerce y pasarelas de pago.</p>
-      </div>
-    </div>
-    
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 5: Marketing</h3>
-        <p>Estrategias digitales para atraer clientes con bajo presupuesto.</p>
-      </div>
-    </div>
-    
-    <div class="timeline-item">
-      <div class="timeline-content">
-        <h3 style="color: var(--accent);">Día 6-7: Proyecto Final</h3>
-        <p>Sesiones prácticas personalizadas y lanzamiento de tu negocio.</p>
-      </div>
+    <div style="background: rgba(244, 201, 93, 0.1); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+      <h3 style="color: var(--accent); margin-bottom: 1rem;">Funciones avanzadas</h3>
+      <p>Consejos para integrar chatbots, sistemas de reservas y pasarelas de pago.</p>
     </div>
   </div>
 </section>
@@ -554,12 +691,12 @@
   <div class="testimonial-grid">
     <div class="testimonial">
       <div class="testimonial-content">
-        <p>Este curso cambió completamente mi perspectiva sobre los negocios digitales. En una semana tenía mi tienda online funcionando y haciendo ventas.</p>
+        <p>Este curso me permitió crear mi primera aplicación web para mi negocio de repostería. En un mes ya tenía clientes haciendo pedidos online.</p>
         <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Ana López">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Laura Martínez">
           <div>
-            <h4 style="color: var(--accent);">Ana López</h4>
-            <p>Dueña de Boutique Online</p>
+            <h4 style="color: var(--accent);">Laura Martínez</h4>
+            <p>Dueña de Dulce Tentación</p>
           </div>
         </div>
       </div>
@@ -567,12 +704,12 @@
     
     <div class="testimonial">
       <div class="testimonial-content">
-        <p>Las herramientas de IA que enseñan son un game changer. Automatizé el 80% de mi trabajo y ahora puedo enfocarme en crecer mi negocio.</p>
+        <p>Las herramientas de IA fueron reveladoras. Pude crear prototipos y generar código mucho más rápido de lo que imaginé posible.</p>
         <div class="testimonial-author">
-          <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Carlos Mendez">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jorge Silva">
           <div>
-            <h4 style="color: var(--accent);">Carlos Mendez</h4>
-            <p>Consultor Financiero</p>
+            <h4 style="color: var(--accent);">Jorge Silva</h4>
+            <p>Consultor Independiente</p>
           </div>
         </div>
       </div>
@@ -580,71 +717,28 @@
     
     <div class="testimonial">
       <div class="testimonial-content">
-        <p>El soporte personalizado hizo toda la diferencia. Pude resolver todas mis dudas específicas y adaptar las soluciones a mi industria.</p>
+        <p>Como emprendedora sin conocimientos técnicos, este curso fue exactamente lo que necesitaba para digitalizar mi negocio de manera profesional.</p>
         <div class="testimonial-author">
           <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="María Fernández">
           <div>
-            <h4 style="color: var(--accent);">María Fernández</h4>
-            <p>Coach de Vida</p>
+            <h4 style="color: var(--accent);">Carmen Rojas</h4>
+            <p>Dueña de Boutique de Moda</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
-
-<!-- Pricing Section -->
-<section class="section" style="text-align: center;">
-  <h2>💳 Inversión</h2>
-  
-  <div style="background: rgba(244, 201, 93, 0.1); border-radius: 15px; padding: 2rem; display: inline-block; margin: 2rem 0; border: 2px solid var(--accent);">
-    <h3 style="color: var(--accent); font-size: 2rem; margin-bottom: 1rem;">$45.000 CLP</h3>
-    <p style="font-size: 1.2rem;">Pago único · Acceso inmediato</p>
-  </div>
-  
-  <div style="max-width: 600px; margin: 0 auto 2rem;">
-    <ul style="list-style-type: none; text-align: left;">
-      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
-        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
-        <strong>7 días</strong> de entrenamiento intensivo con expertos
-      </li>
-      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
-        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
-        <strong>Plantillas premium</strong> generadas con IA
-      </li>
-      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
-        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
-        <strong>Soporte 1:1</strong> durante y después del curso
-      </li>
-      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
-        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
-        <strong>Certificado</strong> de finalización
-      </li>
-      <li style="margin-bottom: 1rem; position: relative; padding-left: 40px;">
-        <i class="fas fa-gem" style="color: var(--accent); position: absolute; left: 0; top: 5px;"></i>
-        <strong>Acceso</strong> a comunidad exclusiva
-      </li>
-    </ul>
-  </div>
-  
-  <a href="#inscripcion" class="button" style="background-color: var(--success); box-shadow: 0 4px 15px rgba(76, 175, 80, 0.4);">
-    <i class="fas fa-lock" style="margin-right: 10px;"></i> Garantía de satisfacción
-  </a>
-  
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7);">
-    7 días de garantía - Si no estás satisfecho, te devolvemos tu dinero
-  </p>
 </section>
 
 <!-- Form Section -->
 <section id="inscripcion" class="section" style="background-color: var(--dark);">
-  <h2 style="text-align: center;">📋 Últimos Cupos Disponibles</h2>
+  <h2 style="text-align: center;">📋 Inscríbete al Curso</h2>
   <p style="text-align: center; margin-bottom: 2rem; font-size: 1.2rem;">
-    Completa tus datos y te enviaremos toda la información para unirte al curso
+    Completa tus datos y te enviaremos toda la información para comenzar
   </p>
   
   <div class="form-container">
-    <form action="https://tu-formulario-o-landing.com" method="POST">
+    <form id="contactForm" onsubmit="sendToWhatsApp(event)">
       <div class="form-group">
         <label for="nombre">Nombre completo</label>
         <input type="text" id="nombre" name="nombre" required placeholder="Ej: Juan Pérez">
@@ -660,9 +754,14 @@
         <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678">
       </div>
       
+      <div class="form-group">
+        <label for="mensaje">Mensaje (opcional)</label>
+        <textarea id="mensaje" name="mensaje" rows="3" placeholder="¿Alguna pregunta o comentario?"></textarea>
+      </div>
+      
       <div style="text-align: center; margin-top: 2rem;">
         <button type="submit" class="button">
-          <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Reservar mi cupo ahora
+          <i class="fas fa-paper-plane" style="margin-right: 10px;"></i> Enviar información
         </button>
       </div>
     </form>
@@ -679,16 +778,195 @@
   </div>
   
   <div class="footer-links">
-    <a href="#">Términos y condiciones</a>
-    <a href="#">Política de privacidad</a>
-    <a href="#">Preguntas frecuentes</a>
-    <a href="#">Contáctanos</a>
+    <a href="terminos.html">Términos y condiciones</a>
+    <a href="privacidad.html">Política de privacidad</a>
+    <a href="faq.html">Preguntas frecuentes</a>
+    <a href="mailto:contacto@cursowebapp.com">Contáctanos</a>
   </div>
   
-  <p class="copyright">© 2025 Negocio Digital Inteligente. Todos los derechos reservados.</p>
+  <p class="copyright">© 2025 Curso Crea tu Web App. Todos los derechos reservados.</p>
 </footer>
 
+<!-- Términos y Condiciones (hidden until linked) -->
+<div id="terminos" style="display: none;">
+  <div class="legal-container">
+    <h1>Términos y Condiciones</h1>
+    
+    <h2>1. Aceptación de los Términos</h2>
+    <p>Al acceder y utilizar este sitio web, usted acepta estar legalmente obligado por estos términos y condiciones de uso.</p>
+    
+    <h2>2. Uso del Sitio</h2>
+    <p>Este sitio está destinado para uso personal y no comercial. No puede modificar, copiar, distribuir, transmitir, mostrar, realizar, reproducir, publicar, licenciar, crear trabajos derivados, transferir o vender cualquier información obtenida de este sitio.</p>
+    
+    <h2>3. Registro y Cuentas</h2>
+    <p>Para acceder a ciertas funciones del sitio, puede ser necesario registrarse y crear una cuenta. Usted es responsable de mantener la confidencialidad de su cuenta y contraseña.</p>
+    
+    <h2>4. Contenido del Curso</h2>
+    <p>Todo el material del curso es propiedad intelectual del proveedor y está protegido por derechos de autor. No está permitida su reproducción o distribución sin autorización expresa.</p>
+    
+    <h2>5. Pagos y Reembolsos</h2>
+    <p>Los pagos son procesados a través de plataformas seguras. Ofrecemos reembolsos dentro de los primeros 7 días si el curso no cumple con sus expectativas.</p>
+    
+    <h2>6. Limitación de Responsabilidad</h2>
+    <p>No garantizamos que el sitio estará siempre disponible o libre de errores. El uso del sitio es bajo su propio riesgo.</p>
+    
+    <h2>7. Modificaciones</h2>
+    <p>Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor inmediatamente después de su publicación en el sitio.</p>
+    
+    <a href="index.html" class="back-button">← Volver al sitio principal</a>
+  </div>
+</div>
+
+<!-- Política de Privacidad (hidden until linked) -->
+<div id="privacidad" style="display: none;">
+  <div class="legal-container">
+    <h1>Política de Privacidad</h1>
+    
+    <h2>1. Información que Recopilamos</h2>
+    <p>Podemos recopilar la siguiente información cuando utiliza nuestro sitio:</p>
+    <ul>
+      <li>Nombre y datos de contacto (correo electrónico, teléfono)</li>
+      <li>Información demográfica (dirección, preferencias)</li>
+      <li>Otra información relevante para encuestas y ofertas</li>
+    </ul>
+    
+    <h2>2. Uso de la Información</h2>
+    <p>Utilizamos esta información para:</p>
+    <ul>
+      <li>Proveer y mejorar nuestros servicios</li>
+      <li>Personalizar la experiencia del usuario</li>
+      <li>Enviar correos promocionales con su consentimiento</li>
+      <li>Procesar pagos y prevenir fraudes</li>
+    </ul>
+    
+    <h2>3. Seguridad</h2>
+    <p>Estamos comprometidos a garantizar que su información esté segura. Hemos implementado medidas físicas, electrónicas y administrativas para proteger sus datos.</p>
+    
+    <h2>4. Cookies</h2>
+    <p>Utilizamos cookies para analizar el tráfico web y mejorar su experiencia. Puede aceptar o rechazar las cookies a través de la configuración de su navegador.</p>
+    
+    <h2>5. Enlaces a Otros Sitios</h2>
+    <p>Nuestro sitio puede contener enlaces a otros sitios de interés. No tenemos control sobre estos sitios y no somos responsables de su política de privacidad.</p>
+    
+    <h2>6. Control de su Información</h2>
+    <p>Puede restringir la recopilación o uso de su información personal de las siguientes maneras:</p>
+    <ul>
+      <li>Marcando la casilla correspondiente en cualquier formulario</li>
+      <li>Contactándonos directamente para solicitar la eliminación de sus datos</li>
+    </ul>
+    
+    <a href="index.html" class="back-button">← Volver al sitio principal</a>
+  </div>
+</div>
+
+<!-- Preguntas Frecuentes (hidden until linked) -->
+<div id="faq" style="display: none;">
+  <div class="legal-container">
+    <h1>Preguntas Frecuentes</h1>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Necesito conocimientos previos de programación?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>No, este curso está diseñado específicamente para emprendedores sin conocimientos técnicos previos. Te guiaremos paso a paso desde cero.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Qué herramientas necesito para el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Solo necesitas una computadora con conexión a internet. Trabajaremos con herramientas gratuitas o con versiones de prueba gratuitas.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Cuánto tiempo dura el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>El curso está estructurado en 8 clases que puedes completar a tu propio ritmo. La mayoría de los estudiantes lo completan en 4-6 semanas dedicando 5-7 horas por semana.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Ofrecen certificado al finalizar?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Sí, al completar satisfactoriamente el curso y el proyecto final, recibirás un certificado digital que acredita tu participación y aprendizaje.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Qué pasa si tengo dudas durante el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Ofrecemos soporte directo a través de un grupo de WhatsApp exclusivo para estudiantes, donde puedes hacer preguntas y recibir ayuda de nuestros instructores.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Cuál es la política de reembolsos?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Ofrecemos una garantía de satisfacción de 7 días. Si dentro de ese período el curso no cumple con tus expectativas, te devolvemos el 100% de tu inversión.</p>
+      </div>
+    </div>
+    
+    <a href="index.html" class="back-button">← Volver al sitio principal</a>
+  </div>
+</div>
+
 <script>
+  // Función para enviar el formulario a WhatsApp
+  function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    const nombre = document.getElementById('nombre').value;
+    const correo = document.getElementById('correo').value;
+    const telefono = document.getElementById('telefono').value || 'No proporcionado';
+    const mensaje = document.getElementById('mensaje').value || 'Sin mensaje adicional';
+    
+    const texto = `Nuevo contacto del curso Web App:\n\nNombre: ${nombre}\nCorreo: ${correo}\nTeléfono: ${telefono}\nMensaje: ${mensaje}`;
+    const textoCodificado = encodeURIComponent(texto);
+    const numeroWhatsApp = '56975225994'; // Tu número de WhatsApp
+    
+    window.open(`https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`, '_blank');
+    
+    // Opcional: Resetear el formulario después del envío
+    document.getElementById('contactForm').reset();
+    
+    // Opcional: Mostrar mensaje de confirmación
+    alert('¡Gracias por tu interés! Serás redirigido a WhatsApp para completar tu inscripción.');
+  }
+  
+  // Función para mostrar/ocultar respuestas en FAQ
+  function toggleAnswer(element) {
+    const answer = element.nextElementSibling;
+    const icon = element.querySelector('i');
+    
+    answer.classList.toggle('show');
+    
+    if (answer.classList.contains('show')) {
+      icon.classList.remove('fa-chevron-down');
+      icon.classList.add('fa-chevron-up');
+    } else {
+      icon.classList.remove('fa-chevron-up');
+      icon.classList.add('fa-chevron-down');
+    }
+  }
+  
   // Animación para el scroll suave
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
