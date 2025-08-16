@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Frecuentes - Curso Web App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0C1B33;
+      --secondary: #1E3A8A;
+      --accent: #F4C95D;
+      --light: #FFFFFF;
+      --dark: #0A1429;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--primary);
+      color: var(--light);
+      line-height: 1.7;
+      padding: 20px;
+    }
+    
+    .legal-container {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    h1 {
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+    
+    /* FAQ styles */
+    .faq-item {
+      margin-bottom: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    .faq-question {
+      color: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+    }
+    
+    .faq-question i {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-answer {
+      margin-top: 1rem;
+      display: none;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(244, 201, 93, 0.2);
+    }
+    
+    .faq-answer.show {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .faq-answer p {
+      margin-bottom: 0.5rem;
+    }
+    
+    .faq-answer ul {
+      padding-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    .faq-answer li {
+      margin-bottom: 0.5rem;
+      position: relative;
+    }
+    
+    .faq-answer li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: -1rem;
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 2px solid var(--accent);
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+    }
+    
+    @media (max-width: 768px) {
+      .legal-container {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .faq-question {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="legal-container">
+    <h1><i class="far fa-question-circle"></i> Preguntas Frecuentes</h1>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Este curso es realmente para principiantes sin conocimientos técnicos?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>¡Absolutamente! Este curso está diseñado específicamente para emprendedores sin experiencia previa en programación. Comenzaremos desde cero y usaremos herramientas de IA como ChatGPT y DeepSeek para simplificar el proceso de creación de tu web app.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Qué necesito para tomar el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Los requisitos básicos son:</p>
+        <ul>
+          <li>Una computadora (Windows, Mac o Linux)</li>
+          <li>Conexión a internet estable</li>
+          <li>Cuenta gratuita en ChatGPT y DeepSeek</li>
+          <li>Editor de texto como Sublime Text (gratuito)</li>
+          <li>¡Muchas ganas de aprender!</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Cómo es la metodología del curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>El curso sigue una metodología práctica paso a paso:</p>
+        <ul>
+          <li>Clases en video grabadas que puedes ver a tu ritmo</li>
+          <li>Ejercicios prácticos después de cada lección</li>
+          <li>Acceso a plantillas de código y prompts optimizados</li>
+          <li>Soporte en grupo privado de WhatsApp</li>
+          <li>Proyecto final donde crearás tu propia web app funcional</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Cuánto tiempo debo dedicarle al curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>El curso está estructurado en 8 clases que la mayoría de estudiantes completan en 4-6 semanas, dedicando:</p>
+        <ul>
+          <li>2-3 horas por semana para las lecciones</li>
+          <li>3-4 horas adicionales para practicar</li>
+          <li>Pero puedes avanzar más rápido o más lento según tu disponibilidad</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿El curso incluye certificado?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Este es un curso sin certificado oficial, ya que está enfocado en resultados prácticos más que en acreditación. Sin embargo, al completar el proyecto final:</p>
+        <ul>
+          <li>Recibirás una constancia de participación digital</li>
+          <li>Tendrás tu propia web app publicada como portafolio</li>
+          <li>Podrás mostrar el código fuente de tu proyecto</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Qué tipo de web app podré crear al finalizar?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Al terminar el curso serás capaz de crear aplicaciones web como:</p>
+        <ul>
+          <li>Tienda online básica</li>
+          <li>Sistema de reservas/citas</li>
+          <li>Landing page interactiva</li>
+          <li>Portal de servicios profesionales</li>
+          <li>Sistema de gestión de clientes simple</li>
+        </ul>
+        <p>Además aprenderás a integrar funcionalidades avanzadas como formularios de contacto, chatbots básicos y más.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Qué pasa si tengo dudas durante el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Ofrecemos varios canales de soporte:</p>
+        <ul>
+          <li>Grupo privado de WhatsApp para estudiantes</li>
+          <li>Sesiones de preguntas y respuestas quincenales</li>
+          <li>Foro de discusión dentro de la plataforma</li>
+          <li>Soporte por email para consultas técnicas</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Puedo acceder al contenido después de terminar el curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>Sí, tendrás acceso permanente a:</p>
+        <ul>
+          <li>Todas las lecciones en video</li>
+          <li>Materiales descargables</li>
+          <li>Plantillas actualizadas</li>
+          <li>El código fuente de ejemplo</li>
+        </ul>
+        <p>Además, recibirás actualizaciones futuras del curso sin costo adicional.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Hay algún costo oculto o requerimiento adicional?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>El curso incluye todo lo necesario para crear y publicar tu web app. Los únicos costos adicionales opcionales serían:</p>
+        <ul>
+          <li>Dominio personalizado (desde $10/año)</li>
+          <li>Hosting premium (hay opciones gratuitas)</li>
+          <li>Funcionalidades avanzadas como pasarelas de pago</li>
+        </ul>
+        <p>Trabajaremos principalmente con herramientas gratuitas y versiones free.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question" onclick="toggleAnswer(this)">
+        <span>¿Cómo me inscribo al curso?</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="faq-answer">
+        <p>El proceso es muy simple:</p>
+        <ol>
+          <li>Completa el formulario de inscripción en la página principal</li>
+          <li>Recibirás un email con las instrucciones de acceso</li>
+          <li>Podrás comenzar inmediatamente con el Módulo 1</li>
+        </ol>
+        <p>No hay procesos de selección ni requisitos previos.</p>
+      </div>
+    </div>
+    
+    <a href="index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver al Sitio Principal</a>
+  </div>
+
+  <script>
+    // Función para mostrar/ocultar respuestas en FAQ
+    function toggleAnswer(element) {
+      const answer = element.nextElementSibling;
+      const icon = element.querySelector('i');
+      
+      answer.classList.toggle('show');
+      
+      if (answer.classList.contains('show')) {
+        icon.classList.remove('fa-chevron-down');
+        icon.classList.add('fa-chevron-up');
+      } else {
+        icon.classList.remove('fa-chevron-up');
+        icon.classList.add('fa-chevron-down');
+      }
+    }
+  </script>
+</body>
+</html>
